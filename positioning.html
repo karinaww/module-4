@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+<h1 id="start">Позиционирование элементов в CSS
+<p>Нужно наложить элемент на элемент? Без позиционирования не обойтись!</p></h1>
+
+<h2>Кратко</h2>
+<p>Свойство <b>position</b> задаёт способ позиционирования элемента в документе. Совместно 
+    со свойствами <b>left, right, top, bottom</b> или <b>inset</b> элементу 
+    задаётся его местоположение на странице.
+</p>
+
+<h2>Пример</h2>
+<div class="css">
+    <span>.box {</span><br>
+        <span style="padding-left: 20px;">position: absolute;</span><br>
+        <span style="padding-left: 20px;">left: 0;</span><br>
+        <span style="padding-left: 20px;">top: 20px;</span><br>
+        <span>}</span>
+</div>
+
+<h2>Как понять?</h2>
+<p>
+    Иногда в процессе вёрстки требуется реализовать разные сложные идеи дизайнера про расположение 
+    элементов друг относительно друга. Например, расположить один элемент поверх другого или немного сместить 
+    отображение элемента относительно своего начального положения. Бывают и более сложные случаи, когда требуется 
+    зафиксировать элемент относительно окна браузера, а не относительно страницы. 
+    Базовым свойством, которое изменяет способ позиционирования, является свойство <b>position</b>.
+</p>
+
+<h2>Значения свойства position</h2>
+<ul>
+    <li><b>static</b> — значение по умолчанию, элемент позиционируется в соответствии 
+        с его местом в потоке документа;
+    </li>
+    <li>
+        <b>relative</b> — элемент позиционируется относительно своего исходного положения в потоке документа;
+    </li>
+    <li>
+        <b>absolute</b> — элемент позиционируется относительно ближайшего родительского элемента, который 
+        имеет позиционирование, отличное от static;
+    </li>
+    <li>
+        <b>fixed</b> — элемент позиционируется относительно окна браузера;
+    </li>
+    <li>
+        <b>sticky</b> — элемент остаётся на месте при прокрутке страницы, но при этом может 
+        быть отодвинут от своей стандартной позиции.
+    </li>
+</ul>
+
+<h2>Static</h2>
+
+<p>
+    <b>Пример использования свойства</b> position <b>со значением</b> static:
+</p>
+
+<div class="container1">
+    
+    <div class="code"> 
+<pre> <b>HTML</b>
+
+ &lt;div class="box" id="one"&gt;Элемент 1&lt;/div&gt;
+ &lt;div class="box" id="two"&gt;Элемент 2 (static)&lt;/div&gt;
+ &lt;div class="box" id="three"&gt;Элемент 3&lt;/div&gt;
+  
+</pre>
+    </div>
+    
+    <div class="code">
+<pre> <b>CSS</b>  
+
+#two {
+    position: static;
+    background: orange;
+}
+</pre>
+    </div>
+
+</div>
+
+<div class="container2">
+    <div class="cont">
+        
+        <div class="box" id="one">Элемент 1</div>
+        <div class="box" id="two">Элемент 2 (static)</div>
+        <div class="box" id="three">Элемент 3</div>
+
+
+    </div>
+
+    <div class="text">
+        <p>
+            Static является значением по умолчанию 
+            для всех элементов и будет отображаться на странице 
+            в соответствии с порядком элемента в 
+            документе. Это значение используется редко и, 
+            как правило, не требует дополнительных параметров.
+        </p>
+        
+    </div>
+</div>
+    
+<h2>Relative</h2>
+<p><b>Пример использования свойства</b> position <b>со значением</b> relative:</p>
+<div class="container1">
+    <div class="code"> 
+<pre> <b>HTML</b>
+
+ &lt;div class="box" id="one"&gt;Элемент 1&lt;/div&gt;
+ &lt;div class="box" id="two"&gt;Элемент 2 (relative)&lt;/div&gt;
+ &lt;div class="box" id="three"&gt;Элемент 3&lt;/div&gt;
+</pre>
+    </div>
+    
+    <div class="code">
+<pre> <b>CSS</b>            
+
+#two {
+    position: relative;
+    left: 50px;
+}
+</pre>
+    </div>
+</div>
+
+<div class="container2">
+    <div class="cont">
+        <div class="box" id="one">Элемент 1</div>
+        <div class="box" id="two2">Элемент 2 (relative)</div>
+        <div class="box" id="three">Элемент 3</div>
+    </div>
+
+    <div class="text">
+        <p>
+            Relative определяет позиционирование элемента относительно его стандартного местоположения на странице. 
+            При использовании этого значения можно задать дополнительные параметры, такие как top, bottom, left и right, 
+            которые указывают на смещение элемента относительно его стандартного местоположения.
+        </p>
+    </div>
+</div>
+
+<h2>Absolute</h2>
+<p><b>Пример использования свойства</b> position <b>со значением</b> absolute.</p>
+<div class="container1">
+    <div class="code"> 
+<pre> <b>HTML</b>
+
+ &lt;div class="box" id="one"&gt;Элемент 1&lt;/div&gt;
+ &lt;div class="box" id="two"&gt;Элемент 2 (absolute)&lt;/div&gt;
+ &lt;div class="box" id="three"&gt;Элемент 3&lt;/div&gt;
+</pre>
+    </div>
+    
+    <div class="code">
+<pre> <b>CSS</b>            
+
+#two {
+    position: absolute;
+    left: 60px;
+    top: 60px;
+}
+</pre>
+    </div>
+</div>
+
+<div class="container2">
+    <div class="cont">
+        <div class="box" id="one">Элемент 1</div>
+        <div class="box" id="two3">Элемент 2 (absolute)</div>
+        <div class="box" id="three">Элемент 3</div>
+    </div>
+
+    <div class="text">
+        <p>
+            Absolute задаёт точное местоположение элемента на странице, независимо от других элементов 
+            на странице. При использовании значения можно задать параметры top, bottom, left и right, 
+            чтобы определить точное местоположение элемента.
+        </p>
+    </div>
+</div>
+
+<h2>Fixed</h2>
+<p><b>Пример использования свойства</b> position <b>со значением</b> fixed:</p>
+<div class="container1">
+    <div class="code"> 
+<pre> <b>HTML</b>
+
+ &lt;div class="box" id="one"&gt;Элемент 1&lt;/div&gt;
+ &lt;div class="box" id="two"&gt;Элемент 2 (fixed)&lt;/div&gt;
+ &lt;div class="box" id="three"&gt;Элемент 3&lt;/div&gt;
+</pre>
+    </div>
+    
+    <div class="code">
+<pre> <b>CSS</b>            
+
+#two {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+</pre>
+    </div>
+</div>
+
+    <div class="container2">
+        <div class="cont">
+            <div class="box" id="one">Элемент 1</div>
+            <div class="box" id="two4">Элемент 2 (fixed)</div>
+            <div class="box" id="three">Элемент 3</div>
+        </div>
+    
+        <div class="text">
+            <p>
+                Fixed задаёт элемент на фиксированном месте на странице, независимо от прокрутки 
+                страницы. При использовании этого значения также можно задать параметры top, bottom, 
+                left и right, чтобы определить точное местоположение элемента.
+            </p>
+        </div>
+    </div>
+
+ <h2>Sticky</h2>
+ <p><b>Пример использования свойства</b> position <b>со значением</b> sticky:</p>
+ <div class="container1">
+    <div class="code"> 
+<pre> <b>HTML</b>
+
+ &lt;div class="box" id="one"&gt;Элемент 1&lt;/div&gt;
+ &lt;div class="box" id="two"&gt;Элемент 2 (sticky)&lt;/div&gt;
+ &lt;div class="box" id="three"&gt;Элемент 3&lt;/div&gt;
+</pre>
+    </div>
+    
+    <div class="code">
+<pre> <b>CSS</b>            
+
+#two {
+    position: sticky;
+    bottom: 80px;
+}
+</pre>
+    </div>
+</div>
+
+<div class="container2">
+    <div class="cont">
+        <div class="box" id="one">Элемент 1</div>
+        <div class="box" id="two5">Элемент 2 (sticky)</div>
+        <div class="box" id="three">Элемент 3</div>
+    </div>
+
+    <div class="text">
+        <p>
+            Sticky начинает себя вести как обычный элемент до тех пор, пока не достигнет 
+            определенной позиции на странице, которую вы зададите с помощью свойства top, right, 
+            bottom или left. Как только элемент достигнет этой позиции при прокрутке страницы, он 
+            зафиксируется на месте и будет оставаться там до тех пор, пока пользователь не 
+            доскроллит страницу обратно.
+        </p>
+    </div>
+</div>
+
+<h2>Нюансы использования</h2>
+<ul>
+    <li>Если у элемента значение свойства position установлено в absolute или fixed, 
+        то такой элемент будет выведен из обычного потока документа и может перекрыть другие 
+        элементы. Если это не предполагается, то нужно следить за порядком элементов на странице 
+        и настройками z-index.
+    </li>
+
+    <li>
+        Значение свойства position может также влиять на поведение других свойств, 
+        например, на позиционирование через top, left, bottom и right.
+    </li>
+
+    <li>
+        Если у элемента значение свойства position установлено в relative, 
+        то это не влияет на позиции других элементов на странице.
+    </li>
+</ul>
+
+<p><b>
+    Если у тебя есть предложения, вопросы или комментарии, пожалуйста, оставь их в форме ниже. Мы обязательно с тобой свяжемся!
+</b></p>
+
+<div id="formContainer">
+    <div id="forma">
+        <form>
+            <input type="text" placeholder="Имя"> 
+        <br>
+            <input type="text" placeholder="Email адрес">
+        <br>
+            <textarea name="comment" id="comment" rows="5" placeholder="Ваше сообщение"></textarea>
+        </form>
+
+        <br>
+
+        <div id="send">
+            Отправить
+        </div>
+    </div>
+
+    <div id="knopka">
+        <a href="#start">Перейти в начало страницы</a>
+    </div>
+</div>
+
+<h3>Если ты хочешь нам написать, свяжись с нами 
+    через <a href="https://example.com/" target="_blank">email@example.com</a></h3>
+
+</body>
+</html>
