@@ -1,0 +1,165 @@
+body {
+    background-color: rgba(220, 233, 249, 0.274);
+    color: rgba(0, 0, 0, 0.645);
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.block-element {
+    display: block;
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+}
+
+.inline-element {
+    display: inline;
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+}
+
+.flex-element {
+    display: flex;
+    gap: 10px;
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+}
+
+.flex-element span {
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.flex-element3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    gap: 10px;
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+}
+
+.flex-element3 span {
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.flex-element4 {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+}
+
+.flex-element4 span {
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.flex-element5 {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+}
+
+.flex-element5 span {
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+#span1 {
+    flex: 2 1 100px;
+}
+
+#span2 {
+    flex: 1 1 100px;
+}
+
+#span3 {
+    flex: 3 0 100px;
+}
+
+.flex-element6 {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(174, 225, 242);
+    box-sizing: border-box;
+  }
+  
+
+.flex-element6 span {
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+#span4 {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+#span5 {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+#span6 {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.knopka {
+    background-color: rgb(174, 225, 242);
+    padding: 10px;
+    color: blue;
+    border-radius: 10px;
+    border: 2px solid blue;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(17, 0, 113);
+}
+
+.pictures {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.pictures img {
+    width: 20%; 
+    height: auto;
+    border-radius: 15px;
+}
+
+.pictures img:hover {
+    box-shadow: 0 8px 20px rgb(174, 225, 242);
+}
+
+
